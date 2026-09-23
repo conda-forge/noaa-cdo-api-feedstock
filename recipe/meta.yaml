@@ -1,5 +1,5 @@
 {% set name = "noaa-cdo-api" %}
-{% set version = "0.0.3" %}
+{% set version = "0.1.0" %}
 {% set python_min = "3.12" %}
 
 package:
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/noaa_cdo_api-{{ version }}.tar.gz
-  sha256: 92f2da08cf9330867900ebf3de92854fae5d2ecff1a35be42cbededf76914341
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/noaa_cdo_api-{{ version }}.tar.gz
+  sha256: 6d2e3ac0a72c96bd7b099004dedc8b4ec01b96b4ef85010d80601e0675002329
 
 build:
   noarch: python
