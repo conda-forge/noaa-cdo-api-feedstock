@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  python_min: "3.12"
+  version: "0.1.0"
+
+package:
+  name: noaa-cdo-api
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/n/noaa-cdo-api/noaa_cdo_api-${{ version }}.tar.gz
+  sha256: 6d2e3ac0a72c96bd7b099004dedc8b4ec01b96b4ef85010d80601e0675002329
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=78.0
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - aiohttp >=3.11.14
+    - aiolimiter >=1.2.1
+    - yarl >=1.18.3
+
+tests:
+  - python:
+      imports:
+        - manual_tests
+        - noaa_cdo_api
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: A NOAA NCEI API wrapper for weather data
+  license: MIT
+  license_file: LICENSE
+  homepage: https://pypi.org/project/noaa-cdo-api/
+  documentation: https://fxf8.github.io/noaa-cdo-api/noaa_api.html
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
