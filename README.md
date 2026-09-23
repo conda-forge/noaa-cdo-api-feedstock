@@ -3,11 +3,13 @@ About noaa-cdo-api-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/noaa-cdo-api-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/fxf8/noaa-cdo-api
+Home: https://pypi.org/project/noaa-cdo-api/
 
 Package license: MIT
 
 Summary: A NOAA NCEI API wrapper for weather data
+
+Documentation: https://fxf8.github.io/noaa-cdo-api/noaa_api.html
 
 Current build status
 ====================
